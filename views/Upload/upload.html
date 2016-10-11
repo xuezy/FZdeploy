@@ -1,0 +1,133 @@
+<!-- 自动化升级—升级前环境、升级后环境、暂停应用、启动应用 -->
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自动升级部署</title>
+    <link rel="stylesheet" type="text/css" href="../../styles/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../../styles/icon.css">
+    <link rel="stylesheet" type="text/css" href="../../styles/demo.css">
+    <link rel="stylesheet" type="text/css" href="../../styles/body.css">
+    <script type="text/javascript" src="../../js/jquery.js"></script>
+    <script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../js/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript">
+        var list = [];
+        var obj = {};
+        obj.userName = "root";
+        obj.remotePath = "/";
+        console.log(obj);
+        //目标文件
+        function pu() {
+            $.ajax({
+                url : "/adeploy/services/rest/select/allFiles",
+                type: 'POST',
+                data : JSON.stringify(obj),
+                dataType : "json",
+                contentType: 'application/json',
+                success : function (data) {
+                    uploads =data;
+                    for(x in uploads) {
+                        console.log(uploads[x]);
+                    }
+//                 	uhostPath = data[0];
+//                 	console.log(uhostPath);
+                    console.log(data);
+                }
+            });
+        };
+        $(function () {
+            //ip
+            $("#ip").change(function (e) {
+                obj.host = e.target.value;
+                uhostname = e.target.value;
+//                console.log(obj.host);
+            });
+
+            $('#tt').tree({
+//                url: '/adeploy/services/rest/select/allFile',
+//                method: 'POST',
+                animate: true,
+                lines: true,
+//                 data : JSON.stringify(obj),
+                data: [{
+                    text: 'Item1',
+                    children: [{
+                        text: 'Item11'
+                    },{
+                        text: 'Item12'
+                    }]
+                },{
+                    text: 'Item2'
+                }],
+                onLoadSuccess:function (node,data){
+                    uploads =data;
+                    for(x in uploads) {
+                        console.log(uploads[x]);
+                    }
+                },
+                onClick: function (node) {
+//                    uhostPath = $(this).tree('getSelected').text;
+                    alert(node.text);
+//                    console.log(uhostPath);
+                },
+
+                loader:function (param,success,error) {
+//                    param：发送到远程服务器的参数对象。
+//                     console.log(param);
+//                    success(data)：当检索数据成功的时候调用的回调函数
+                },
+                onLoadError:function () {
+                    alert("tree加载失败");
+                }
+            });
+
+        });
+
+
+        //上传
+        function up() {
+            //本地文件
+            uloaclPath = $('#upload').val();
+            //用户名
+            uuserName = 'root';
+            list.push({uhostname, uloaclPath, uuserName, uhostPath});
+            console.log(list);
+            $.ajax({
+                url: '/adeploy/services/rest/file/uploadfile',
+//              secureuri: false,
+                fileElementId: 'upload',
+                contentType: 'application/json',
+                dataType: 'json',
+                data: JSON.stringify(list),
+                type: "post",
+                success: function (data) {
+                    alert(data);
+                }
+            });
+        }
+        ;
+    </script>
+</head>
+<body>
+<div class="easyui-panel" title="上传" style="width:800px;max-width:1000px;padding:30px 60px;">
+    <label>选择IP:</label>
+    <select id="ip" style="margin-bottom: 10px">
+        <option value="192.168.0.91">192.168.0.91</option>
+        <option value="192.168.0.92">192.168.0.92</option>
+        <option value="192.168.0.93">192.168.0.93</option>
+    </select>
+    <div style="margin-bottom: 10px">
+        <label for="upload">文件:</label>
+        <input id="upload" class="easyui-validatebox tb" data-options="required:true"
+               style="width: 300px;height: 20px;">
+    </div>
+    <div style="margin-bottom: 10px">
+        <button style="float: left" onclick="pu()">目标文件夹:</button>
+        <ul id="tt" style="float: left;margin: 3px 20px"></ul>
+    </div>
+    <button onclick="up()" style="margin: 100px">上传</button>
+</div>
+</body>
+</html>

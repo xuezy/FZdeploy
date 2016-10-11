@@ -1,0 +1,126 @@
+<!-- 分发调整 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自动升级部署</title>
+	<link rel="stylesheet" type="text/css" href="../../styles/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/icon.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/demo.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/body.css">
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../../js/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			//table
+			$('#yj').datagrid({
+			    fit:true,
+				fitColumns:true,
+				singleSelect:true,
+			});
+			$('#jy').datagrid({
+			    fit:true,
+				fitColumns:true,
+				singleSelect:true,
+			});
+
+			//按钮
+		})
+	</script>
+</head>
+<body>
+<div style="padding:20px;">
+	<span>源&ensp;文&ensp;件:</span>
+    <!-- <input class="easyui-textbox" type="text" name="sourcefile" style="width:100px"/> -->
+    <input name="sourcefile" type="file" id="sourcefile" />&nbsp;&nbsp;
+    <span>目的文件:</span>
+    <!-- <input class="easyui-textbox" type="text" name="destination" style="width:100px"/> -->
+    <input  name="destination" type="file" id="destination" /><br><br>
+    <span>部署方式:</span>
+    <input type="checkbox" name="quan" >全量部署&nbsp;
+    <input type="checkbox" name="zeng" >增量部署
+    <br><br>
+      <div style="width: 600px; height: 200px;">
+      	 <div style="float: left;width: 250px;height: 200px; margin: 10px 0 0 10px;">
+ 	            <h4>源文件</h4>
+ 			    <table id="yj" class="easyui-datagrid" style="width:200px">
+ 			    	<thead>
+ 			    		<tr>
+ 			    			<th field="fewd1" width="50">全选</th>
+ 			    			<th field="fsfw2" width="50">序号</th>
+ 			    			<th field="ftrg3" width="250">文件</th>
+ 			    		</tr>
+ 			    	</thead>
+ 			    	<tbody>
+ 			    		<tr>
+ 			    			<td><input type="checkbox" name=""></td>
+ 			    			<td>1</td>
+ 			    			<td><input type="text" name=""></td>
+ 			    		</tr>
+ 			    		<tr>
+ 			    			<td><input type="checkbox" name=""></td>
+ 			    			<td>2</td>
+ 			    			<td><input type="text" name=""></td>
+ 			    		</tr>
+ 			    		<tr>
+ 			    			<td><input type="checkbox" name=""></td>
+ 			    			<td>3</td>
+ 			    			<td><input type="text" name=""></td>
+ 			    		</tr>
+ 			    		<tr>
+ 			    			<td><input type="checkbox" name=""></td>
+ 			    			<td>4</td>
+ 			    			<td><input type="text" name=""></td>
+ 			    		</tr>
+ 			    		<tr>
+ 			    			<td><input type="checkbox" name=""></td>
+ 			    			<td>5</td>
+ 			    			<td><input type="text" name=""></td>
+ 			    		</tr>
+ 			    	</tbody>
+ 			    </table>
+      	 </div>
+      	 <div style="float: left;width: 260px;height: 200px; margin: 10px 0 0 60px;">
+      	 	<h4>目标文件</h4>
+      	 	<table id="jy" class="easyui-datagrid">
+      	 		<thead>
+      	 			<tr>
+      	 				<th field="wed1" width="50">全选</th>
+      	 				<th field="qwdas2" width="50">序号</th>
+      	 				<th field="wefwe3" width="200">文件</th>
+      	 			</tr>
+      	 		</thead>
+      	 		<tbody>
+      	 			<tr>
+      	 				<td><input type="checkbox" name=""></td>
+      	 				<td>1</td>
+      	 				<td><input type="text" name=""></td>
+      	 			</tr>
+      	 			<tr>
+      	 				<td><input type="checkbox" name=""></td>
+      	 				<td>2</td>
+      	 				<td><input type="text" name=""></td>
+      	 			</tr>
+      	 			<tr>
+      	 				<td><input type="checkbox" name=""></td>
+      	 				<td>3</td>
+      	 				<td><input type="text" name=""></td>
+      	 			</tr>
+      	 			<tr>
+      	 				<td><input type="checkbox" name=""></td>
+      	 				<td>4</td>
+      	 				<td><input type="text" name=""></td>
+      	 			</tr>
+      	 			<tr>
+      	 				<td><input type="checkbox" name=""></td>
+      	 				<td>5</td>
+      	 				<td><input type="text" name=""></td>
+      	 			</tr>
+      	 		</tbody>
+      	 	</table>
+      	 </div>
+      </div>
+    </div>
+</body>
+</html>

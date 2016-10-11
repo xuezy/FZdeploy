@@ -1,0 +1,108 @@
+<!-- 自动化升级—删除升级方案 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自动升级部署</title>
+	<link rel="stylesheet" type="text/css" href="../../styles/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/icon.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/demo.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/body.css">
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../../js/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript" src="DeletePlan.js"></script>
+</head>
+<body>
+<table id="operateTable"></table>
+
+<div id="addDeploy" class="easyui-dialog" closed="true" title="添加检查项目" style="width: 500px; height: 200px">
+    <form id="addDeployForm" action="" method="post">
+        <table align="center" style="padding: 10px">
+            <tbody>
+            <tr>
+                <td>
+                    <lable>序&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;号:</lable>
+                </td>
+                <td><input class="easyui-validatebox" required="true" name="id"></td>
+                <td>
+                    <lable>检&emsp;&emsp;查&emsp;&emsp;项&emsp;&emsp;目&emsp;:</lable>
+                </td>
+                <td><input class="easyui-validatebox" required="true" name="checkProject"></td>
+            </tr>
+            <tr>
+                <td>
+                    <lable>检查方法:</lable>
+                </td>
+                <td><input class="easyui-validatebox" required="true" name="checkMethod"></td>
+                <td>
+                    <lable>检查输出结果:</lable>
+                </td>
+                <td><input class="easyui-validatebox" required="true" name="checkOutPut"></td>
+            </tr>
+            <tr>
+                <td>
+                    <lable>检查结果:</lable>
+                </td>
+                <td><input class="easyui-validatebox" required="true" name="checkPut"></td>
+                <td>
+                    <lable>是&emsp;&emsp;否&emsp;&emsp;正&emsp;&emsp;常&emsp;:</lable>
+                </td>
+                <td><input class="easyui-validatebox" required="true" name="isNormal"></td>
+            </tr>
+            <tr>
+                <td>
+                    <lable>判断标准:</lable>
+                </td>
+                <td><input class="easyui-validatebox" required="true" name="putonghua"></td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+<div id="upDeploy" class="easyui-dialog" closed="true" title="修改检查项目" style="width: 500px; height: 200px">
+    <form id="upDeployForm" action="" method="post">
+        <table align="center" style="padding: 10px">
+            <tbody>
+            <tr>
+                <td>
+                    <lable>序&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;号:</lable>
+                </td>
+                <td><input class="easyui-validatebox" name="id" readonly="readonly"></td>
+                <td>
+                    <lable>检&emsp;&emsp;查&emsp;&emsp;项&emsp;&emsp;目&emsp;:</lable>
+                </td>
+                <td><input class="easyui-validatebox" required="true" name="checkProject"></td>
+            </tr>
+            <tr>
+                <td>
+                    <lable>检查方法:</lable>
+                </td>
+                <td><input class="easyui-validatebox" required="true" name="checkMethod"></td>
+                <td>
+                    <lable>检查输出结果:</lable>
+                </td>
+                <td><input class="easyui-validatebox" required="true" name="checkOutPut"></td>
+            </tr>
+            <tr>
+                <td>
+                    <lable>检查结果:</lable>
+                </td>
+                <td><input class="easyui-validatebox" required="true" name="checkPut"></td>
+                <td>
+                    <lable>是&emsp;&emsp;否&emsp;&emsp;正&emsp;&emsp;常&emsp;:</lable>
+                </td>
+                <td><input class="easyui-validatebox" required="true" name="isNormal"></td>
+            </tr>
+            <tr>
+                <td>
+                    <lable>判断标准:</lable>
+                </td>
+                <td><input class="easyui-validatebox" required="true" name="putonghua"></td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+
+</html>

@@ -1,0 +1,42 @@
+ [
+    {
+        "checkMethod": "ps -ef | grep com.tongweb.server.PELaunch", 
+        "checkOutPut": "XXXXXXXXXXXX", 
+        "checkProject": "查看TongWeb进程是否存在", 
+        "checkPut": "进程存在", 
+        "id": 1, 
+        "isNormal": "是",
+        "note": "无", 
+        "putonghua": "有，则表示进程存在"
+    }, 
+    {
+        "checkMethod": "ps -ef | grep activemq.home", 
+        "checkOutPut": "XXXXXXXXXXXX", 
+        "checkProject": "查看activeMQ进程是否存在", 
+        "checkPut": "进程存在", 
+        "id": 3, 
+        "isNormal": "否",
+        "note": "无", 
+        "putonghua": "有，则表示进程存在"
+    }, 
+    {
+        "checkMethod": "测试数据123", 
+        "checkOutPut": "测试数据", 
+        "checkProject": "测试数据", 
+        "checkPut": "测试数据", 
+        "id": 5, 
+        "isNormal": "是",
+        "note": "无", 
+        "putonghua": "测试数据"
+    }, 
+    {
+        "checkMethod": "测试数据12", 
+        "checkOutPut": "测试数据", 
+        "checkProject": "测试数据", 
+        "checkPut": "测试数据", 
+        "id": 6, 
+        "isNormal": "否",
+        "note": "无", 
+        "putonghua": "测试数据"
+    }
+]

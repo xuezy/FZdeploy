@@ -1,0 +1,98 @@
+<!-- 自动化升级—升级前环境、升级后环境、暂停应用、启动应用 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自动升级部署</title>
+	<link rel="stylesheet" type="text/css" href="../../styles/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/icon.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/demo.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/body.css">
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../../js/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript">
+		$(function() {
+
+        //按钮
+        $('#btn').linkbutton({
+            iconCls: 'icon-t'
+        });
+        $('#bnt').linkbutton({
+            iconCls: 'icon-t'
+        });
+        //table
+        $('#lk').datagrid({
+        	fitColumns:true,
+        	singleSelect:true,
+        });
+        $('#kl').datagrid({
+        	fitColumns:true,
+        	singleSelect:true,
+        });
+		})
+	</script>
+</head>
+<body>
+	<h2>统一支付省前置模块&nbsp;&nbsp;&nbsp;<font size="18px" style="color: blue">启动应用</font>&nbsp;调整</h2>
+	<a id="btn">新增启动应用检查</a>&nbsp;
+	<a id="bnt">新增关键词</a><br><br>
+	<table id="lk" class="easyui-datagrid" style="height:100px">
+		<thead>
+			<tr>
+				<th field="f1" width="100">修改</th>
+				<th field="f2" width="100">删除</th>
+				<th field="f3" width="150">启动应用检查项目</th>
+				<th field="f4" width="100">检查方法</th>
+				<th field="f5" width="100">判断标准</th>
+				<th field="f6" width="100">备注</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>1</td>
+			</tr>
+		</tbody>
+	</table>
+	<table id="kl" class="easyui-datagrid" style="height:100px">
+		<thead>
+			<tr>
+				<th field="w1" width="100">修改</th>
+				<th field="w2" width="100">删除</th>
+				<th field="w3" width="150">检查输出结果关键词</th>
+				<th field="w4" width="200">检查结果</th>
+				<th field="w5" width="100">是否正常</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>1</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

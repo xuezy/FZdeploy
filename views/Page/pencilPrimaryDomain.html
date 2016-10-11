@@ -1,0 +1,44 @@
+<!-- 自动化升级—修改主域节点 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自动升级部署</title>
+	<link rel="stylesheet" type="text/css" href="../../styles/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/icon.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/demo.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/body.css">
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../../js/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			//按钮
+			$("#btn").linkbutton({
+				iconCls:'icon-ok',
+				text:'保存'
+				// plain:true
+			});
+			$("#bnt").linkbutton({
+				iconCls:'icon-cancel',
+				text:'取消'
+			})
+		})
+	</script>
+</head>
+<body>
+  <div class="rt">
+	 <label for="ip">主域节点名称:</label>
+	 <input type="text" name="ip" value="xxxxxxxxx" style="width:157px;height: 20px;">
+	 <br><br><br>
+	 <div >
+		 <div style="float: left;">
+		    <a id="btn"></a>
+		 </div>
+		 <div style="float: left;margin: 0 0 0 75px">
+		 	<a id="bnt"></a>
+		 </div>
+	 </div>
+  </div>
+</body>
+</html>

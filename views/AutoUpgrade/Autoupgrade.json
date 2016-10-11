@@ -1,0 +1,42 @@
+[
+   {
+       "checkMethod": 1,
+       "checkOutPut": "AAAAA",
+       "checkProject": "D:/",
+       "checkPut": "成功",
+       "id": "成功",
+       "isNormal": "成功",
+       "note": "成功",
+       "putonghua": "成功"
+   },
+   {
+       "checkMethod": 2,
+       "checkOutPut": "BBBBB",
+       "checkProject": "C:/",
+       "checkPut": "成功",
+       "id": "成功",
+       "isNormal": "成功",
+       "note": "成功",
+       "putonghua": "成功"
+   },
+   {
+       "checkMethod": 3,
+       "checkOutPut": "CCCCC",
+       "checkProject": "E:/",
+       "checkPut": "成功",
+       "id": "成功",
+       "isNormal": "成功",
+       "note": "成功",
+       "putonghua": "成功"
+   },
+   {
+       "checkMethod": 4,
+       "checkOutPut": "DDDDD",
+       "checkProject": "W:/",
+       "checkPut": "成功",
+       "id": "成功",
+       "isNormal": "成功",
+       "note": "成功",
+       "putonghua": "成功"
+   }
+]

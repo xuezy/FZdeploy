@@ -7,6 +7,7 @@
 			attributes : {
 				url : "views/Page/Automation.html"
 			},
+			{sssssssssss},
 			children : [
 			// {
 			// 	text : "自动化升级—主域设置",

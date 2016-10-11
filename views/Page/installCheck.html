@@ -1,0 +1,44 @@
+<!-- 自动化升级—安装目录查看 -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>自动升级部署</title>
+    <link rel="stylesheet" type="text/css" href="../../styles/default/easyui.css">
+  	<link rel="stylesheet" type="text/css" href="../../styles/icon.css">
+  	<link rel="stylesheet" type="text/css" href="../../styles/demo.css">
+  	<link rel="stylesheet" type="text/css" href="../../styles/body.css">
+  	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+  	<script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../js/easyui-lang-zh_CN.js"></script>
+    <style type="">
+
+    </style>
+    <script type="text/javascript">
+                 $(function () {
+            $('#we').filebox({
+                buttonText: '选择文件',
+                     buttonAlign: 'left'
+            });
+            $('#ig').filebox({
+                buttonText: '选择文件',
+                     buttonAlign: 'left'
+            });
+            $("input").attr("readonly", "readonly");
+            $('#fb').filebox({
+                buttonText: '选择文件',
+                buttonAlign: 'left'
+            })
+        })
+    </script>
+</head>
+<body>
+<!--<span>源&ensp;文&ensp;件:</span>-->
+<!--<input class="easyui-filebox" style="width:200px"/>-->
+<!--<input name="sourcefile" id="we" type="file" id="sourcefile" /><br><br>-->
+<!--<span>目的文件:</span>-->
+<!--<input id="ig" type="text" style="width:200px"/>-->
+<!--<input  name="destination" id="we" type="file" id="destination" />-->
+<input id="fb" type="text" style="width:300px">
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!-- 运维—自动化升级 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>自动升级部署</title>
+	<link rel="stylesheet" type="text/css" href="../../styles/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/icon.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/demo.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/body.css">
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../../js/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+          $('#dg').datagrid({
+          	  fit: true,
+          	  url:'',
+          	  fitColumns:true,
+          	  singleSelect:true,
+          	  pagination:true,
+
+
+              // url:'datagrid_data.json',
+              // columns:[
+              //     {field:'code',title:'Code',width:100},
+              //     {field:'name',title:'Name',width:100},
+              //     {field:'price',title:'Price',width:100},
+              //     {field:'wed',title:'Price',width:100},
+              //     {field:'dsfew',title:'Price',width:100},
+              //     {field:'wewe',title:'Price',width:100},
+              // ]
+          });
+
+          //分页
+          $('#dg').datagrid('getPager').pagination({
+           displayMsg:'当前显示从{from}到{to},共{total}条记录',
+           beforePageText:'第',
+           afterPageText:'页,共{pages}页',
+           showRefresh:false
+          });
+
+          //按钮
+          $('#btn').linkbutton({
+              iconCls: 'icon-t'
+          });
+          $('#bnt').linkbutton({
+              iconCls: 'icon-t'
+          });
+
+		});
+
+        //下面的表格
+		$(function() {
+			$('#de').datagrid({
+				fit:true,
+				url:'',
+				fitColumns:true,
+				singleSelect:true
+			})
+		});
+	</script>
+</head>
+<body>
+	<div class="qwe">
+		<ul class="easyui-tree">
+			<li data-options="state:'open'">
+				<span>自动化升级</span>
+				<ul>
+					<li data-options="state:'closed'">
+						<span>统一支付的省前置模块</span>
+						<ul>
+							<li>
+								<span>127.0.0.1</span>
+							</li>
+							<li>
+								<span>127.0.0.2</span>
+							</li>
+							<li>
+								<span>127.0.0.3</span>
+							</li>
+						</ul>
+					</li>
+					<li data-options="state:'closed'">
+						<span>银行前置模块</span>
+						<ul>
+							<li>127.0.1.1</li>
+							<li>127.0.1.2</li>
+						</ul>
+					</li>
+					<li>天猫前置模块</li>
+					<li>商城前置模块</li>
+					<li>交易核心模块</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+<div>
+<a id="btn" href="Automationsettings.html">立即升级</a>
+<a id="bnt" href="update.html">自动化升级设置</a>
+<br><br>
+<table id="dg" class="easyui-datagrid" style="height:250px">
+    <thead>
+        <tr>
+            <th data-options="field:'code',width:100">主域</th>
+            <th data-options="field:'name',width:100">IP</th>
+            <th data-options="field:'price',width:100">当前版本</th>
+            <th data-options="field:'wed',width:100">部署方式</th>
+            <th data-options="field:'dsfew',width:100">升级操作者</th>
+            <th data-options="field:'wewe',width:100,align:'right'">最后升级时间</th>
+        </tr>
+    </thead>
+    <tbody>
+    	<tr>
+    		<td>统一支付的省前置模块</td>
+    		<td>127.0.0.1</td>
+    		<td>version_1.1</td>
+    		<td>全量</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>统一支付的省前置模块</td>
+    		<td>127.0.0.2</td>
+    		<td>version_1.1</td>
+    		<td>全量</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>统一支付的省前置模块</td>
+    		<td>127.0.0.3</td>
+    		<td>version_1.1</td>
+    		<td>全量</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>银行前置模块</td>
+    		<td>127.0.1.1</td>
+    		<td>version_1.1</td>
+    		<td>增量</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>银行前置模块</td>
+    		<td>127.0.1.2</td>
+    		<td>version_1.1</td>
+    		<td>增量</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>统一支付的省前置模块</td>
+    		<td>127.0.0.1</td>
+    		<td>version_1.1</td>
+    		<td>全量</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>统一支付的省前置模块</td>
+    		<td>127.0.0.2</td>
+    		<td>version_1.1</td>
+    		<td>全量</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>统一支付的省前置模块</td>
+    		<td>127.0.0.3</td>
+    		<td>version_1.1</td>
+    		<td>全量</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>银行前置模块</td>
+    		<td>127.0.1.1</td>
+    		<td>version_1.1</td>
+    		<td>增量</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>银行前置模块</td>
+    		<td>127.0.1.2</td>
+    		<td>version_1.1</td>
+    		<td>增量</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>统一支付的省前置模块</td>
+    		<td>127.0.0.1</td>
+    		<td>version_1.1</td>
+    		<td>全量</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>统一支付的省前置模块</td>
+    		<td>127.0.0.2</td>
+    		<td>version_1.1</td>
+    		<td>全量</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>统一支付的省前置模块</td>
+    		<td>127.0.0.3</td>
+    		<td>version_1.1</td>
+    		<td>全量</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>银行前置模块</td>
+    		<td>127.0.1.1</td>
+    		<td>version_1.1</td>
+    		<td>增量</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>银行前置模块</td>
+    		<td>127.0.1.2</td>
+    		<td>version_1.1</td>
+    		<td>增量</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+
+    </tbody>
+</table>
+</div>
+<br><br>
+<!-- <div>
+	<table id="de" class="easyui-datagrid" style="width:400px;height:250px">
+	    <thead>
+	        <tr>
+	            <th data-options="field:'code',width:100">升级序号</th>
+	            <th data-options="field:'name',width:100">升级时间</th>
+	            <th data-options="field:'qwdq',width:100">升级操作者</th>
+	            <th data-options="field:'dsaew',width:100">前期版本</th>
+	            <th data-options="field:'rffs',width:100">当前版本</th>
+	            <th data-options="field:'vfda',width:100">安装目录</th>
+	            <th data-options="field:'asdq',width:100">升级前环境</th>
+	            <th data-options="field:'asdqd',width:100">分发</th>
+	            <th data-options="field:'ves',width:100">暂停应用</th>
+	            <th data-options="field:'trg',width:100">启动应用</th>
+	            <th data-options="field:'ytht',width:100">升级后环境</th>
+	            <th data-options="field:'nyuy',width:100">部署</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	    	<tr>
+	    		<td>1</td>
+	    		<td></td>
+	    		<td></td>
+	    		<td>version_1.0</td>
+	    		<td>version_1.1</td>
+	    		<td><a href="#">查看</a></td>
+	    		<td><a href="#">查看</a></td>
+	    		<td><a href="#">查看</a></td>
+	    		<td><a href="#">查看</a></td>
+	    		<td><a href="#">查看</a></td>
+	    		<td><a href="#">查看</a></td>
+	    		<td>成功</td>
+	    	</tr>
+	    	<tr>
+	    		<td>1</td>
+	    		<td></td>
+	    		<td></td>
+	    		<td>version_1.0</td>
+	    		<td>version_1.1</td>
+	    		<td><a href="#">查看</a></td>
+	    		<td><a href="#">查看</a></td>
+	    		<td><a href="#">查看</a></td>
+	    		<td><a href="#">查看</a></td>
+	    		<td><a href="#">查看</a></td>
+	    		<td><a href="#">查看</a></td>
+	    		<td>成功</td>
+	    	</tr>
+	    	<tr>
+	    		<td>1</td>
+	    		<td></td>
+	    		<td></td>
+	    		<td>version_1.0</td>
+	    		<td>version_1.1</td>
+	    		<td><a href="#">查看</a></td>
+	    		<td><a href="#">查看</a></td>
+	    		<td><a href="#">查看</a></td>
+	    		<td><a href="#">查看</a></td>
+	    		<td><a href="#">查看</a></td>
+	    		<td><a href="#">查看</a></td>
+	    		<td>成功</td>
+	    	</tr>
+	    </tbody>
+	</table>
+</div> -->
+
+</body>
+</html>

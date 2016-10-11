@@ -1,0 +1,46 @@
+<!-- 自动化升级—新增IP地址节点 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自动升级部署</title>
+	<link rel="stylesheet" type="text/css" href="../../styles/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/icon.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/demo.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/body.css">
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../../js/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			//按钮
+			$("#btn").linkbutton({
+				iconCls:'icon-add',
+				// plain:true
+			});
+			$("#bnt").linkbutton({
+				iconCls:'icon-la'
+			})
+		})
+	</script>
+</head>
+<body>
+  <div class="rt">
+     <label for="dept">请选择主域:</label>
+	 <select id="cc" class="easyui-combobox" name="dept" style="width:160px;">
+		 <option selected value="统一支付的省前置模块">统一支付的省前置模块</option>
+		 <option value="银行前置模块">银行前置模块</option>
+		 <option value="天猫前置模块">天猫前置模块</option>
+		 <option value="商城前置模块">商城前置模块</option>
+		 <option value="交易核心模块">交易核心模块</option>
+		 <option value="清结算模块">清结算模块</option>
+		 <option value="加解密模块">加解密模块</option>
+		 <option value="管控台系统模块">管控台系统模块</option>
+	 </select> <br> <br>
+	 <label for="ip">I&emsp;P&emsp;地址:</label>
+	 <input type="text" name="ip" style="width:157px;height: 20px;">&nbsp;&nbsp;
+	    <a id="btn"></a>&nbsp;&nbsp;<a id="bnt">CMDB资源树提取IP</a><br><br>
+	 <label for="ip">I&emsp;P&emsp;地址:</label>
+  </div>
+</body>
+</html>

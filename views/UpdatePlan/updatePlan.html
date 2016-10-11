@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../../styles/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/icon.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/demo.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/body.css">
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../../js/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript" src="updatePlan.js"></script>
+	<script type="text/javascript">
+	//控制div显示or隐藏
+	function showAll() {
+		if ($("#showPart").panel('close')) {
+			$("#showAll").panel('open');
+		} else{
+			$("#showPart").panel('close');
+			$("#showAll").panel('open');
+		}
+	}
+
+	function showPart() {
+		if ($("#showAll").panel('close')) {
+			$("#showPart").panel('open');
+		} else{
+			$("#showAll").panel('close');
+			$("#showPart").panel('open');
+		}
+	}
+	</script>
+</head>
+<body>
+<div>
+	<form id="updatePlan" name="updatePlan">
+	<div>
+		<div>
+			<span>升级方案名称:</span> 
+			<input id="planName" type="text" class="easyui-textbox" style="background:#C7C7C7;" value="" readonly="true" />
+		</div>
+		<div style="margin-top:10px;">
+			<span>升级方案说明:</span> <textarea id="planDesc" style="width:300px;" value=""></textarea>
+		</div>
+	</div>
+	<div style="margin-top:10px;">
+		<div id="tabs" style="width:720px;height:350px">
+ 			<div title="配置上传文件" style="padding:20px;">
+ 				<div>
+ 					<span>部署方式:</span>
+ 					<input name="pattern" type="radio" value= 0 onclick="showAll()">全量部署&ensp;&ensp;
+ 					<input name="pattern" type="radio" value= 1 onclick="showPart()">增量部署
+ 				</div>
+ 				<!-- 因为有datagrid，所以不能使用css 的display也控制div的显示和隐藏，而需要使用panel来实现-->
+ 				<!-- 增量部署 div 块-->
+ 				<div id="showAll" class="easyui-panel" closed="true" border="false" style="width:650px;margin-top:20px;">
+ 					<span>源&ensp;文&ensp;件:</span>
+ 					<!--测试filebox 文件路径 data-options="onChange:function(){alert($(this).filebox('getValue'))}"  -->
+ 					<input id="localPath" class="easyui-filebox" name="localPath" style="width:200px;"/>
+ 					<span>目的文件:</span>
+ 					<input id="remotePath" class="easyui-filebox" name="remotePath" style="width:200px;"/>
+ 				</div>
+ 				<!-- 增量部署 div 块-->
+ 				<div id="showPart" class="easyui-panel" closed="true" border="false" style="width:650px;height:280px;margin-top:20px;">
+ 					<table id="upload" class="easyui-datagrid" style="width:650px;">
+ 					</table>
+ 				</div>
+ 			</div>
+ 			<div title="升级前环境" style="padding:20px;">
+ 				<div style="float:left; width:650px;">
+ 					<table id="before" class="easyui-datagrid" style="width:650px;">
+ 						<!-- <thead>
+ 							<th data-options="field:'ck', checkbox:true"></th>
+ 							<th data-options="field:'checkProject', title:'升级前环境检查项目'"></th>
+ 							<th data-options="field:'checkMethods', title:'检查方法'"></th>
+ 							<th data-options="field:'criteria', title:'判断标准'"></th>
+ 							<th data-options="field:'remarks', title:'备注'"></th>
+ 						</thead> -->
+ 					</table>
+ 				</div>
+ 				<!-- <div id="tb1">
+ 					<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" onclick="add()">添加</a>
+ 					<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" onclick="remove()">删除</a>
+ 					<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save',plain:true" onclick="save()">保存</a>
+ 				</div> -->
+ 			</div>
+ 			<div title="升级后环境" style="padding:20px;">
+ 				<div style="float:left; width:650px;">
+ 					<table id="after" class="easyui-datagrid" style="width:650px;">
+ 						<!-- <thead>
+ 							<th data-options="field:'ck', checkbox:true"></th>
+ 							<th data-options="field:'checkProject', title:'升级前环境检查项目'"></th>
+ 							<th data-options="field:'checkMethods', title:'检查方法'"></th>
+ 							<th data-options="field:'criteria', title:'判断标准'"></th>
+ 							<th data-options="field:'remarks', title:'备注'"></th>
+ 						</thead> -->
+ 					</table>
+ 				</div>
+ 				<!-- <div id="tb2">
+ 					<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" onclick="add()">添加</a>
+ 					<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" onclick="remove()">删除</a>
+ 					<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save',plain:true" onclick="save()">保存</a>
+ 				</div> -->
+ 			</div>
+ 			<div title="暂停应用" style="padding:20px">
+<!--  				<div>
+ 					<a id="upgradeNow" href="#">新增暂停应用检查</a>&ensp;&ensp;
+ 					<a id="config" href="#">新增关键字</a>
+ 				</div> -->
+ 				<div style="float:left; width:650px;">
+ 					<table id="pause" class="easyui-datagrid" style="width:650px;">
+ 						<!-- <thead>
+ 							<th data-options="field:'ck', checkbox:true"></th>
+ 							<th data-options="field:'checkProject', title:'暂停应用检查项目'"></th>
+ 							<th data-options="field:'checkMethods', title:'检查方法'"></th>
+ 							<th data-options="field:'criteria', title:'判断标准'"></th>
+ 							<th data-options="field:'remarks', title:'备注'"></th>
+ 						</thead> -->
+ 					</table>
+ 				</div>
+ 				<!-- <div id="tb3">
+ 					<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" onclick="add()">添加</a>
+ 					<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" onclick="remove()">删除</a>
+ 					<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save',plain:true" onclick="save()">保存</a>
+ 				</div>  -->
+ 			</div>
+ 			<div title="启动应用" style="padding:20px;">
+ 				<div style="float:left; width:650px">
+ 					<table id="start" class="easyui-datagrid" style="width:650px;">
+ 						<!-- <thead>
+ 							<th data-options="field:'ck', checkbox:true"></th>
+ 							<th data-options="field:'checkProject', title:'启动应用检查项目'"></th>
+ 							<th data-options="field:'checkMethods', title:'检查方法'"></th>
+ 							<th data-options="field:'criteria', title:'判断标准'"></th>
+ 							<th data-options="field:'remarks', title:'备注'"></th>
+ 						</thead> -->
+ 					</table>
+ 				</div>
+ 				<!-- <div id="tb4">
+ 					<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" onclick="add()">添加</a>
+ 					<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" onclick="remove()">删除</a>
+ 					<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save',plain:true" onclick="save()">保存</a>
+ 				</div> -->
+ 			</div>
+		</div>
+	</div>
+	<div id="p" class="easyui-panel" style="width:720px;height:50px;padding:10px">
+		<center>
+			<a id="btnSaveAll" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-save'" text="保存"></a>
+			<a id="btnCancelAll" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" text="取消"></a>
+		</center>
+	</div>
+	</form>
+</div>
+</body>
+</html>

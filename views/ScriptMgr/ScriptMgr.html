@@ -1,0 +1,106 @@
+<!-- 自动化升级—升级前环境、升级后环境、暂停应用、启动应用 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自动升级部署</title>
+    <link rel="stylesheet" type="text/css" href="../../styles/default/easyui.css">
+  	<link rel="stylesheet" type="text/css" href="../../styles/icon.css">
+  	<link rel="stylesheet" type="text/css" href="../../styles/demo.css">
+  	<link rel="stylesheet" type="text/css" href="../../styles/body.css">
+  	<script type="text/javascript" src="../../js/jquery.js"></script>
+  	<script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../js/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../../scripts/jquery_extend.js"></script>
+    <script type="text/javascript" src="ScriptMgr.js"></script>
+</head>
+<body>
+<table id="ko"></table>
+<div id="addDeploy" class="easyui-dialog" closed="true" title="添加检查项目" style="width: 500px; height: 200px">
+    <form id="addDeployForm" action="" method="post">
+        <table align="center" style="padding: 10px">
+            <tbody>
+            <tr>
+                <td>
+                    <lable>检查项目:</lable>
+                </td>
+                <td><input class="easyui-validatebox" required="true" name="checkProject"></td>
+                <td>
+                    <lable>检查方法:</lable>
+                </td>
+                <td><input class="easyui-validatebox" required="true" name="checkMethod"></td>
+            </tr>
+            <tr>
+
+                <td>
+                    <lable>检查输出结果:</lable>
+                </td>
+                <td><input class="easyui-validatebox" required="true" name="checkOutPut"></td>
+                <td>
+                    <lable>检查结果:</lable>
+                </td>
+                <td><input class="easyui-validatebox" required="true" name="checkPut"></td>
+            </tr>
+            <tr>
+
+                <td>
+                    <lable>是否正常:</lable>
+                </td>
+                <td><input class="easyui-validatebox" required="true" name="isNormal"></td>
+                <td>
+                    <lable>判断标准:</lable>
+                </td>
+                <td><input class="easyui-validatebox" required="true" name="putonghua"></td>
+
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+<div id="upDeploy" class="easyui-dialog" closed="true" title="修改检查项目" style="width: 500px; height: 200px">
+    <form id="upDeployForm" action="" method="post">
+        <table align="center" style="padding: 10px">
+            <tbody>
+            <tr>
+                <td>
+                    <lable>序号:</lable>
+                </td>
+                <td><input class="easyui-validatebox" name="id" readonly="readonly"></td>
+                <td>
+                    <lable>检查项目:</lable>
+                </td>
+                <td><input class="easyui-validatebox" required="true" name="checkProject"></td>
+            </tr>
+            <tr>
+                <td>
+                    <lable>检查方法:</lable>
+                </td>
+                <td><input class="easyui-validatebox" required="true" name="checkMethod"></td>
+                <td>
+                    <lable>检查输出结果:</lable>
+                </td>
+                <td><input class="easyui-validatebox" required="true" name="checkOutPut"></td>
+            </tr>
+            <tr>
+                <td>
+                    <lable>检查结果:</lable>
+                </td>
+                <td><input class="easyui-validatebox" required="true" name="checkPut"></td>
+                <td>
+                    <lable>是否正常:</lable>
+                </td>
+                <td><input class="easyui-validatebox" required="true" name="isNormal"></td>
+            </tr>
+            <tr>
+                <td>
+                    <lable>判断标准:</lable>
+                </td>
+                <td><input class="easyui-validatebox" required="true" name="putonghua"></td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>

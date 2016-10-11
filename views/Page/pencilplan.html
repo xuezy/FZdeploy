@@ -1,0 +1,570 @@
+<!-- 自动化升级—修改升级方案 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自动升级部署</title>
+	<link rel="stylesheet" type="text/css" href="../../styles/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/icon.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/demo.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/body.css">
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../../js/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// var treeData = [{
+			// 		"id":1,
+			// 		"state":'open',
+			// 		"text":"自动化升级",
+			// 		"iconCls":"icon-ok",
+			// 		"children":[
+			// 		{
+			// 			"id":3,
+			// 			"checkbox": false,
+			// 			"text":"统一支付的省前置模块",
+			// 			"state":"closed",
+			// 			"children":[{
+			// 				"id":4,
+			// 				"text":"127.0.0.1",
+			// 				"checked":true,
+			// 				// "iconCls":"icon-reload"
+			// 			},
+			// 			{
+			// 				"id":5,
+			// 				"text":"127.0.0.2",
+			// 				"checked":true,
+			// 				// "iconCls":"icon-reload"
+			// 			},
+			// 			{
+			// 				"id":6,
+			// 				"text":"127.0.0.3",
+			// 				"checked":true,
+			// 				// "iconCls":"icon-reload"
+			// 			}]
+
+
+			// 		},{
+			// 			"id":3,
+			// 			"checkbox": false,
+			// 			"text":"银行前置模块",
+			// 			"state":"closed",
+			// 			"children":[{
+			// 				"id":4,
+			// 				"text":"127.0.1.1",
+			// 				"checked":false,
+			// 				// "iconCls":"icon-reload"
+			// 			},{
+			// 				"id":4,
+			// 				"text":"127.0.1.2",
+			// 				"checked":false,
+			// 				// "iconCls":"icon-reload"
+			// 			}]
+
+			// 		},{
+			// 			"id":2,
+			// 			"text":"天猫前置模块",
+			// 			// "checked":true
+			// 		},
+			// 		{
+			// 			"id":2,
+			// 			"text":"商城前置模块",
+			// 			// "checked":true
+			// 		},
+			// 		{
+			// 			"id":2,
+			// 			"text":"交易核心模块",
+			// 			// "checked":true
+			// 		},
+			// 		]
+
+			// 	}];
+
+			//菜单栏
+			// $('#er').tree({
+			// 	checkbox: true,
+			// 	data: treeData,
+			// 	// url: 'tree_data.json',
+			// 	onClick:function(node){
+			// 		$(this).tree('toggle', node.target);
+			// 	},
+
+			// });
+
+            //input框
+			$('#vv').validatebox({
+			    required: true,
+			    // validType:['zifu','length[1]']
+			});
+
+			$('#ee').validatebox({
+				required:true
+			})
+
+			//数据
+			$('#dg').datagrid({
+				fit: true,
+				url:'',
+				fitColumns:true,
+				singleSelect:true,
+			});
+			$('#tt').tabs({
+				// tools:[{
+				// 	iconCls:'icon-add',
+				// 	handler: function(){
+				// 		alert('add');
+				// 	}
+				// },{
+				// 	iconCls:'icon-save',
+				// 	handler: function(){
+				// 		alert('save');
+				// 	}
+				// }]
+			});
+			//按钮
+			$('#btn').linkbutton({
+			    iconCls: 'icon-t'
+			});
+			$('#bnt').linkbutton({
+			    iconCls: 'icon-t'
+			});
+			$('#btn1').linkbutton({
+			    iconCls: 'icon-t'
+			});
+			$('#bnt2').linkbutton({
+			    iconCls: 'icon-t'
+			});
+			$('#btnn').linkbutton({
+			    iconCls: 'icon-t'
+			});
+			$('#bntn').linkbutton({
+			    iconCls: 'icon-t'
+			});
+			$('#btnn1').linkbutton({
+			    iconCls: 'icon-t'
+			});
+			$('#bntn2').linkbutton({
+			    iconCls: 'icon-t'
+			});
+			//table
+			$('#de').datagrid({
+				fitColumns:true,
+				singleSelect:true,
+			});
+			$('#de2').datagrid({
+				fitColumns:true,
+				singleSelect:true,
+			});
+			$('#dw').datagrid({
+				fitColumns:true,
+				singleSelect:true,
+			});
+			$('#dw2').datagrid({
+				fitColumns:true,
+				singleSelect:true,
+			});
+			$('#yj').datagrid({
+			    fit:true,
+				fitColumns:true,
+				singleSelect:true,
+			});
+			$('#jy').datagrid({
+			    fit:true,
+				fitColumns:true,
+				singleSelect:true,
+			});
+			$('#op').datagrid({
+				fitColumns:true,
+				singleSelect:true,
+			});
+			$('#po').datagrid({
+				fitColumns:true,
+				singleSelect:true,
+			});
+			$('#lk').datagrid({
+				fitColumns:true,
+				singleSelect:true,
+			});
+			$('#kl').datagrid({
+				fitColumns:true,
+				singleSelect:true,
+			});
+			$('#tb').textbox({
+//				buttonText:'Search',
+				iconCls:'icon-man',
+				label:'升级方案:',
+				iconAlign:'left'
+			});
+			$('#tbq').textbox({
+//				buttonText:'Search',
+				iconCls:'icon-man',
+				label:'方案说明:',
+				iconAlign:'left'
+			})
+
+		});
+	</script>
+</head>
+<body>
+<div>
+<!-- 	<div class="qwe">
+		<ul id="er"></ul>
+	</div> -->
+	<!-- <div style="margin: auto 0 0 200px"> -->
+	<div><input id="tb" type="text" style="width:300px"></div>
+	<br>
+	<div><input id="tbq" type="text" style="width:300px"></div>
+	<div>
+		<!--<input id="vv" class="easyui-textbox" label="升级方案:" labelPosition="left" style="width:300px" /><br><br>-->
+		<!--<input id="ee" class="easyui-textbox" label="方案说明:" labelPosition="left" style="width:300px" />-->
+	</div>
+	<br><br>
+	<div>
+	<div id="tt" style=";height:400px;">
+		<div title="配置上传文件" style="padding:20px;">
+            <div style="margin-bottom:20px">
+                <input class="easyui-filebox" label="源&ensp;文&ensp;件:" labelPosition="left" data-options="prompt:'选择文件',buttonText:'&nbsp;选&nbsp;择&nbsp;',required:true,missingMessage:'该输入项为必输项'" style="width:300px">
+            </div>
+            <div style="margin-bottom:40px">
+                <input class="easyui-filebox" label="目的文件:" labelPosition="left" data-options="prompt:'选择文件',buttonText:'&nbsp;选&nbsp;择&nbsp;',required:true,missingMessage:'该输入项为必输项'" style="width:300px">
+            </div>
+		    <span>部署方式:</span>
+		    <input type="checkbox" name="quan" >全量部署&nbsp;
+		    <input type="checkbox" name="zeng" >增量部署
+            <br><br>
+              <div style="width: 600px; height: 200px;">
+              	 <div style="float: left;width: 250px;height: 200px; margin: 10px 0 0 10px;">
+  	 	            <h4>源文件</h4>
+  	 			    <table id="yj" class="easyui-datagrid" style="width:200px">
+  	 			    	<thead>
+  	 			    		<tr>
+  	 			    			<th field="fewd1" width="50">全选</th>
+  	 			    			<th field="fsfw2" width="50">序号</th>
+  	 			    			<th field="ftrg3" width="250">文件</th>
+  	 			    		</tr>
+  	 			    	</thead>
+  	 			    	<tbody>
+  	 			    		<tr>
+  	 			    			<td><input type="checkbox" name=""></td>
+  	 			    			<td>1</td>
+  	 			    			<td><input type="text" name=""></td>
+  	 			    		</tr>
+  	 			    		<tr>
+  	 			    			<td><input type="checkbox" name=""></td>
+  	 			    			<td>2</td>
+  	 			    			<td><input type="text" name=""></td>
+  	 			    		</tr>
+  	 			    		<tr>
+  	 			    			<td><input type="checkbox" name=""></td>
+  	 			    			<td>3</td>
+  	 			    			<td><input type="text" name=""></td>
+  	 			    		</tr>
+  	 			    		<tr>
+  	 			    			<td><input type="checkbox" name=""></td>
+  	 			    			<td>4</td>
+  	 			    			<td><input type="text" name=""></td>
+  	 			    		</tr>
+  	 			    		<tr>
+  	 			    			<td><input type="checkbox" name=""></td>
+  	 			    			<td>5</td>
+  	 			    			<td><input type="text" name=""></td>
+  	 			    		</tr>
+  	 			    	</tbody>
+  	 			    </table>
+              	 </div>
+              	 <div style="float: left;width: 260px;height: 200px; margin: 10px 0 0 60px;">
+              	 	<h4>目标文件</h4>
+              	 	<table id="jy" class="easyui-datagrid">
+              	 		<thead>
+              	 			<tr>
+              	 				<th field="wed1" width="50">全选</th>
+              	 				<th field="qwdas2" width="50">序号</th>
+              	 				<th field="wefwe3" width="200">文件</th>
+              	 			</tr>
+              	 		</thead>
+              	 		<tbody>
+              	 			<tr>
+              	 				<td><input type="checkbox" name=""></td>
+              	 				<td>1</td>
+              	 				<td><input type="text" name=""></td>
+              	 			</tr>
+              	 			<tr>
+              	 				<td><input type="checkbox" name=""></td>
+              	 				<td>2</td>
+              	 				<td><input type="text" name=""></td>
+              	 			</tr>
+              	 			<tr>
+              	 				<td><input type="checkbox" name=""></td>
+              	 				<td>3</td>
+              	 				<td><input type="text" name=""></td>
+              	 			</tr>
+              	 			<tr>
+              	 				<td><input type="checkbox" name=""></td>
+              	 				<td>4</td>
+              	 				<td><input type="text" name=""></td>
+              	 			</tr>
+              	 			<tr>
+              	 				<td><input type="checkbox" name=""></td>
+              	 				<td>5</td>
+              	 				<td><input type="text" name=""></td>
+              	 			</tr>
+              	 		</tbody>
+              	 	</table>
+              	 </div>
+              </div>
+		</div>
+		<div title="暂停应用" closable="false" style="padding:20px;" cache="false">
+			<a id="btn">立即升级</a>&nbsp;
+			<a id="bnt">自动化升级设置</a><br><br>
+			<table id="de" class="easyui-datagrid" style="height:100px">
+				<thead>
+					<tr>
+						<th field="f1" width="100">修改</th>
+						<th field="f2" width="100">删除</th>
+						<th field="f3" width="150">暂停应用检查项目</th>
+						<th field="f4" width="100">检查方法</th>
+						<th field="f5" width="100">判断标准</th>
+						<th field="f6" width="100">备注</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>1</td>
+					</tr>
+				</tbody>
+			</table><br><br>
+			<table id="de2" class="easyui-datagrid" style="height:100px">
+				<thead>
+					<tr>
+						<th field="w1" width="100">修改</th>
+						<th field="w2" width="100">删除</th>
+						<th field="w3" width="150">检查输出结果关键词</th>
+						<th field="w4" width="200">检查结果</th>
+						<th field="w5" width="100">是否正常</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>1</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+		<div title="升级前环境" iconCls="icon-reload" closable="false" style="padding:20px;">
+			<a id="btn1">新增升级前环境检查</a>&nbsp;
+			<a id="bnt2">新增关键词</a><br><br>
+			<table id="dw" class="easyui-datagrid" style="height:100px">
+				<thead>
+					<tr>
+						<th field="f1" width="100">修改</th>
+						<th field="f2" width="100">删除</th>
+						<th field="f3" width="150">暂停应用检查项目</th>
+						<th field="f4" width="100">检查方法</th>
+						<th field="f5" width="100">判断标准</th>
+						<th field="f6" width="100">备注</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>1</td>
+					</tr>
+				</tbody>
+			</table>
+			<table id="dw2" class="easyui-datagrid" style="height:100px">
+				<thead>
+					<tr>
+						<th field="w1" width="100">修改</th>
+						<th field="w2" width="100">删除</th>
+						<th field="w3" width="150">检查输出结果关键词</th>
+						<th field="w4" width="200">检查结果</th>
+						<th field="w5" width="100">是否正常</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>1</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+<!-- 		<div title="分发" closable="false" style="padding:20px;">
+
+			</div> -->
+		<div title="升级后环境" closable="false" style="padding:20px;">
+			<a id="btnn">新增升级后环境检查</a>&nbsp;
+			<a id="bntn">新增关键词</a><br><br>
+			<table id="po" class="easyui-datagrid" style="height:100px">
+				<thead>
+					<tr>
+						<th field="f1" width="100">修改</th>
+						<th field="f2" width="100">删除</th>
+						<th field="f3" width="150">升级后环境检查项目</th>
+						<th field="f4" width="100">检查方法</th>
+						<th field="f5" width="100">判断标准</th>
+						<th field="f6" width="100">备注</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>1</td>
+					</tr>
+				</tbody>
+			</table>
+			<table id="op" class="easyui-datagrid" style="height:100px">
+				<thead>
+					<tr>
+						<th field="w1" width="100">修改</th>
+						<th field="w2" width="100">删除</th>
+						<th field="w3" width="150">检查输出结果关键词</th>
+						<th field="w4" width="200">检查结果</th>
+						<th field="w5" width="100">是否正常</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>1</td>
+					</tr>
+				</tbody>
+			</table>
+		  </div>
+
+		<div title="启动应用" closable="false" style="padding:20px;">
+			<a id="btnn1">新增启动应用检查</a>&nbsp;
+			<a id="bntn2">新增关键词</a><br><br>
+			<table id="lk" class="easyui-datagrid" style="height:100px">
+				<thead>
+					<tr>
+						<th field="f1" width="100">修改</th>
+						<th field="f2" width="100">删除</th>
+						<th field="f3" width="150">启动应用检查项目</th>
+						<th field="f4" width="100">检查方法</th>
+						<th field="f5" width="100">判断标准</th>
+						<th field="f6" width="100">备注</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>1</td>
+					</tr>
+				</tbody>
+			</table>
+			<table id="kl" class="easyui-datagrid" style="height:100px">
+				<thead>
+					<tr>
+						<th field="w1" width="100">修改</th>
+						<th field="w2" width="100">删除</th>
+						<th field="w3" width="150">检查输出结果关键词</th>
+						<th field="w4" width="200">检查结果</th>
+						<th field="w5" width="100">是否正常</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>1</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	</div>
+	<!-- </div> -->
+</body>
+</html>

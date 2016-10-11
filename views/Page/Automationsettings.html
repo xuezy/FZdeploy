@@ -1,0 +1,143 @@
+<!-- 自动化升级—自动化升级设置 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自动升级部署</title>
+	<link rel="stylesheet" type="text/css" href="../../styles/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/icon.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/demo.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/body.css">
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../../js/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript">
+		$(function() {
+		// 	$('#cc').combobox({
+		// 	    url:'combobox_data.json',
+		// 	    valueField:'id',
+		// 	    textField:'text'
+		// 	});
+
+		//按钮
+		$('#btn1').linkbutton({
+		    iconCls: 'icon-t'
+		});
+		$('#btn2').linkbutton({
+		    iconCls: 'icon-add'
+		});
+		$('#btn3').linkbutton({
+		    iconCls: 'icon-edit'
+		});
+		$('#btn4').linkbutton({
+		    iconCls: 'icon-remove'
+		});
+		$('#btn5').linkbutton({
+		    iconCls: 'icon-w'
+		});
+
+		//数据
+		$('#dg').datagrid({
+			fit: true,
+			url:'',
+			fitColumns:true,
+			singleSelect:true,
+		});
+	});
+	</script>
+</head>
+<body>
+<div class="err">
+  <div class="rt">
+	 <select id="cc" class="easyui-combobox" name="dept" style="width:100px;">
+	     <option value="aa">A</option>
+	     <option>B</option>
+	     <option>C</option>
+	 </select>
+  </div>
+  <div class="trt">
+	 <a id="btn1" href="#">立即升级</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 <a id="btn2" href="#">新增升级方案</a>
+	 <a id="btn3" href="#">修改升级方案</a>
+	 <a id="btn4" href="#">删除升级方案</a>
+	 <div class="vf">
+	 	<a id="btn5" href="#">主域设置</a>
+	 </div>
+  </div>
+</div>
+
+<table id="dg" class="easyui-datagrid" style="height:250px">
+    <thead>
+        <tr>
+            <th data-options="field:'code',width:50">升级顺序</th>
+            <th data-options="field:'name',width:150">主域</th>
+            <th data-options="field:'price',width:100">IP</th>
+            <th data-options="field:'wed',width:100">安装目录</th>
+            <th data-options="field:'dsfew',width:100" >升级前环境</th>
+            <th data-options="field:'wewe',width:100">分发</th>
+            <th data-options="field:'weq',width:100">暂停应用</th>
+            <th data-options="field:'adq',width:100">启动应用</th>
+            <th data-options="field:'fes',width:100">升级后环境</th>
+        </tr>
+    </thead>
+    <tbody>
+    	<tr>
+    		<td>1</td>
+    		<td>统一支付的省前置模块</td>
+    		<td>127.0.0.1</td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    	</tr>
+    	<tr>
+    		<td>1</td>
+    		<td>统一支付的省前置模块</td>
+    		<td>127.0.0.2</td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    	</tr>
+    	<tr>
+    		<td>1</td>
+    		<td>统一支付的省前置模块</td>
+    		<td>127.0.0.3</td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    	</tr>
+    	<tr>
+    		<td>2</td>
+    		<td>银行前置模块</td>
+    		<td>127.0.1.1</td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    	</tr>
+    	<tr>
+    		<td>2</td>
+    		<td>银行前置模块</td>
+    		<td>127.0.1.2</td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    		<td><input type="checkbox" name="" style="margin:0 50px;"></td>
+    	</tr>
+
+    </tbody>
+</table>
+</body>
+</html>

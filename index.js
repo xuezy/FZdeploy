@@ -7,8 +7,8 @@
 			attributes : {
 				url : "views/Page/Automation.html"
 			},
-			{sssssssssss},
-			{saadssadsadssa}
+			{ssssssssssswwww},
+			{saadssadsadssarrrrrr}
 				{bbbbbbbbbb}
 			children : [
 			// {

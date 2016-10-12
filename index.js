@@ -10,6 +10,7 @@
 			{ssssssssssswwww},
 			{saadssadsadssarrrrrr}
 				{bbbbbbbbbb}
+				{SSSSSSSSSS}
 			children : [
 			// {
 			// 	text : "自动化升级—主域设置",
